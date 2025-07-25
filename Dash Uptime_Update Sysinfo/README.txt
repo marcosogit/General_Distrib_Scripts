@@ -1,9 +1,8 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2761
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+Descrição Detalhada do Script de Coleta de Dados para Dashboard Grafana
+Objetivo:
 
-\f0\fs24 \cf0 # Readme\
-# Script criado para realizar a coleta de dados do ambiente como Hostname / Last Update / Uptime / Version para o dashboard do grafana http://10.1.10.166/d/b1e77b28-5483-4822-baeb-472bc2edb757/unix-system-report?orgId=1&var-hstzbx=All&from=now-1h&to=now&var-cust=All&var-os=All}
+Desenvolver um script de automação para coletar dados básicos de servidores UNIX/Linux — incluindo hostname, tempo desde a última atualização, uptime do sistema e versão do sistema operacional — e alimentar um dashboard de monitoramento no Grafana. O objetivo é oferecer uma visão consolidada e atualizada da saúde e conformidade dos servidores no ambiente corporativo.
+
+Funcionamento Geral:
+
+O script é executado periodicamente (via cron, Ansible, ou systemd timer) em cada servidor monitorado. Ele coleta dados locais e os envia para uma base de dados (como InfluxDB, Prometheus Pushgateway, ElasticSearch, ou mesmo um arquivo JSON centralizado), que serve como fonte de dados para o Grafana.
